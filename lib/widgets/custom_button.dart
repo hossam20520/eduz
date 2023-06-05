@@ -101,6 +101,17 @@ class CustomButton extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
+      case ButtonPadding.PaddingAll18:
+        return getPadding(
+          all: 18,
+        );
+      case ButtonPadding.PaddingT14:
+        return getPadding(
+          left: 5,
+          top: 14,
+          right: 5,
+          bottom: 14,
+        );
       case ButtonPadding.PaddingAll15:
         return getPadding(
           all: 15,
@@ -111,29 +122,47 @@ class CustomButton extends StatelessWidget {
           right: 16,
           bottom: 16,
         );
-      case ButtonPadding.PaddingAll5:
+      case ButtonPadding.PaddingT6:
         return getPadding(
-          all: 5,
+          top: 6,
+          right: 6,
+          bottom: 6,
         );
-
-      case ButtonPadding.PaddingT14:
+      case ButtonPadding.PaddingAll9:
         return getPadding(
-          left: 5,
-          top: 14,
-          right: 5,
-          bottom: 14,
+          all: 9,
+        );
+      case ButtonPadding.PaddingT12:
+        return getPadding(
+          left: 8,
+          top: 12,
+          bottom: 12,
         );
       default:
         return getPadding(
-          all: 18,
+          all: 3,
         );
     }
   }
 
   _setColor() {
     switch (variant) {
+      case ButtonVariant.FillBluegray50:
+        return ColorConstant.blueGray50;
       case ButtonVariant.OutlineIndigo300:
         return ColorConstant.whiteA700;
+      case ButtonVariant.FillRed200:
+        return ColorConstant.red200;
+      case ButtonVariant.FillGreenA100:
+        return ColorConstant.greenA100;
+      case ButtonVariant.OutlineBluegray50:
+        return ColorConstant.gray10003;
+      case ButtonVariant.FillYellow700:
+        return ColorConstant.yellow700;
+      case ButtonVariant.FillBlue800:
+        return ColorConstant.blue800;
+      case ButtonVariant.OutlineIndigo300_1:
+        return null;
       default:
         return ColorConstant.purpleA400;
     }
@@ -148,7 +177,26 @@ class CustomButton extends StatelessWidget {
             1.00,
           ),
         );
+      case ButtonVariant.OutlineBluegray50:
+        return BorderSide(
+          color: ColorConstant.blueGray50,
+          width: getHorizontalSize(
+            1.00,
+          ),
+        );
+      case ButtonVariant.OutlineIndigo300_1:
+        return BorderSide(
+          color: ColorConstant.indigo300,
+          width: getHorizontalSize(
+            1.00,
+          ),
+        );
+      case ButtonVariant.FillBluegray50:
       case ButtonVariant.FillPurpleA400:
+      case ButtonVariant.FillRed200:
+      case ButtonVariant.FillGreenA100:
+      case ButtonVariant.FillYellow700:
+      case ButtonVariant.FillBlue800:
         return null;
       default:
         return null;
@@ -157,14 +205,38 @@ class CustomButton extends StatelessWidget {
 
   _setBorderRadius() {
     switch (shape) {
-      case ButtonShape.Square:
-        return BorderRadius.circular(0);
       case ButtonShape.RoundedBorder7:
         return BorderRadius.circular(
           getHorizontalSize(
             7.00,
           ),
         );
+      case ButtonShape.RoundedBorder16:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            16.00,
+          ),
+        );
+      case ButtonShape.RoundedBorder4:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            4.00,
+          ),
+        );
+      case ButtonShape.RoundedBorder15:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            15.00,
+          ),
+        );
+      case ButtonShape.CircleBorder20:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            20.00,
+          ),
+        );
+      case ButtonShape.Square:
+        return BorderRadius.circular(0);
       default:
         return BorderRadius.circular(
           getHorizontalSize(
@@ -176,6 +248,24 @@ class CustomButton extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
+      case ButtonFontStyle.InterBold16:
+        return TextStyle(
+          color: ColorConstant.whiteA700,
+          fontSize: getFontSize(
+            16,
+          ),
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w700,
+        );
+      case ButtonFontStyle.RobotoRomanBold1576:
+        return TextStyle(
+          color: ColorConstant.black900,
+          fontSize: getFontSize(
+            15.76,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w700,
+        );
       case ButtonFontStyle.MontserratRegular20:
         return TextStyle(
           color: ColorConstant.whiteA700,
@@ -194,6 +284,79 @@ class CustomButton extends StatelessWidget {
           fontFamily: 'Montserrat',
           fontWeight: FontWeight.w400,
         );
+      case ButtonFontStyle.InterSemiBold10:
+        return TextStyle(
+          color: ColorConstant.black900,
+          fontSize: getFontSize(
+            10,
+          ),
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w600,
+        );
+      case ButtonFontStyle.RobotoRomanBold20:
+        return TextStyle(
+          color: ColorConstant.whiteA700,
+          fontSize: getFontSize(
+            20,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w700,
+        );
+      case ButtonFontStyle.RobotoRomanRegular14:
+        return TextStyle(
+          color: ColorConstant.blueGray400,
+          fontSize: getFontSize(
+            14,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w400,
+        );
+      case ButtonFontStyle.RobotoRomanBold18:
+        return TextStyle(
+          color: ColorConstant.black900,
+          fontSize: getFontSize(
+            18,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w700,
+        );
+      case ButtonFontStyle.MontserratRomanMedium16:
+        return TextStyle(
+          color: ColorConstant.whiteA700,
+          fontSize: getFontSize(
+            16,
+          ),
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w500,
+        );
+      case ButtonFontStyle.RobotoMedium14:
+        return TextStyle(
+          color: ColorConstant.whiteA700,
+          fontSize: getFontSize(
+            14,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w500,
+        );
+      case ButtonFontStyle.MontserratLight18:
+        return TextStyle(
+          color: ColorConstant.indigo300,
+          fontSize: getFontSize(
+            18,
+          ),
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w300,
+        );
+
+      case ButtonFontStyle.RobotoRomanRegular14Bluegray40002:
+        return TextStyle(
+          color: ColorConstant.blueGray40002,
+          fontSize: getFontSize(
+            14,
+          ),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w400,
+        );
       default:
         return TextStyle(
           color: ColorConstant.whiteA700,
@@ -208,27 +371,50 @@ class CustomButton extends StatelessWidget {
 }
 
 enum ButtonShape {
+  RoundedBorder16,
   Square,
   RoundedBorder11,
-  CircleBorder18,
   RoundedBorder7,
+  RoundedBorder4,
+  RoundedBorder15,
+  CircleBorder20,
 }
 
 enum ButtonPadding {
+  PaddingAll3,
   PaddingAll18,
+  PaddingT14,
   PaddingAll15,
   PaddingT16,
-  PaddingAll5,
-  PaddingT14,
+  PaddingT6,
+  PaddingAll9,
+  PaddingT12,
 }
 
 enum ButtonVariant {
+  FillBluegray50,
   FillPurpleA400,
   OutlineIndigo300,
+  FillRed200,
+  FillGreenA100,
+  OutlineBluegray50,
+  FillYellow700,
+  FillBlue800,
+  OutlineIndigo300_1,
 }
 
 enum ButtonFontStyle {
+  InterBold16,
+  RobotoRomanRegular14Bluegray40002,
+  RobotoRomanBold1576,
   MontserratSemiBold20,
   MontserratRegular20,
   MontserratRegular18,
+  InterSemiBold10,
+  RobotoRomanBold20,
+  RobotoRomanRegular14,
+  RobotoRomanBold18,
+  MontserratRomanMedium16,
+  RobotoMedium14,
+  MontserratLight18,
 }

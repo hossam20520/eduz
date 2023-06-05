@@ -26,21 +26,50 @@ import 'package:eduz/presentation/home_screen/home_screen.dart';
 import 'package:eduz/presentation/home_screen/binding/home_binding.dart';
 import 'package:get/get.dart';
 import 'package:eduz/presentation/calander_screen/calander_screen.dart';
+import 'package:eduz/presentation/chat_screen/chat_screen.dart';
+import 'package:eduz/presentation/chat_screen/binding/chat_binding.dart';
 import 'package:eduz/presentation/tab_container_screen/tab_container_screen.dart';
 import 'package:eduz/presentation/tab_container_screen/binding/single_supplie_policy_tab_tab_container_binding.dart';
+import 'package:eduz/presentation/products_screen/products_screen.dart';
+import 'package:eduz/presentation/products_screen/binding/products_binding.dart';
+import 'package:eduz/presentation/school_screen/school_screen.dart';
+import 'package:eduz/presentation/school_screen/binding/school_binding.dart';
+import 'package:eduz/presentation/teachers_screen/teachers_screen.dart';
+import 'package:eduz/presentation/teachers_screen/binding/teachers_binding.dart';
+import 'package:eduz/presentation/universities_screen/universities_screen.dart';
+import 'package:eduz/presentation/universities_screen/binding/universities_binding.dart';
+import 'package:eduz/presentation/schools_info_screen/schools_info_screen.dart';
+import 'package:eduz/presentation/schools_info_screen/binding/schools_info_binding.dart';
+import 'package:eduz/presentation/schools_facilities_screen/schools_facilities_screen.dart';
+import 'package:eduz/presentation/schools_facilities_screen/binding/schools_facilities_binding.dart';
+import 'package:eduz/presentation/schools_activities_screen/schools_activities_screen.dart';
+import 'package:eduz/presentation/schools_activities_screen/binding/schools_activities_binding.dart';
+import 'package:eduz/presentation/schools_reviews_screen/schools_reviews_screen.dart';
+import 'package:eduz/presentation/schools_reviews_screen/binding/schools_reviews_binding.dart';
+import 'package:eduz/presentation/cart_screen/cart_screen.dart';
+import 'package:eduz/presentation/cart_screen/binding/cart_binding.dart';
+import 'package:eduz/presentation/formschool_screen/formschool_screen.dart';
+import 'package:eduz/presentation/formschool_screen/binding/formschool_binding.dart';
+
+import 'package:eduz/presentation/kindergarten_screen/kindergarten_screen.dart';
+import 'package:eduz/presentation/kindergarten_screen/binding/kindergarten_binding.dart';
 
 class AppRoutes {
-
+  static const String universitiesScreen = '/universities_screen';
+  static const String kindergartenScreen = '/kindergarten_screen';
+  static const String specialNeedsCentersScreen =
+      '/special_needs_centers_screen';
   // static const String singleSupplieReviewTabPage = '/single_supplie_review_tab_page';
-
-  static const String singleSuppliePolicyTabPage = '/single_supplie_policy_tab_page';
-
-  static const String TabContainerScreen =  '/tab_container_screen';
+  static const String schoolScreen = '/school_screen';
+  static const String singleSuppliePolicyTabPage =
+      '/single_supplie_policy_tab_page';
+  static const String teachersScreen = '/teachers_screen';
+  static const String TabContainerScreen = '/tab_container_screen';
 
   static const String chooselanguageScreen = '/chooselanguage_screen';
   static const String favoriteScreen = '/favorite_screen';
   static const String calanderScreen = '/calander_screen';
-
+  static const String cartScreen = '/cart_screen';
   static const String splashscreenScreen = '/splashscreen_screen';
 
   static const String onbordingOneScreen = '/onbording_one_screen';
@@ -66,18 +95,74 @@ class AppRoutes {
   static const String homeContainerScreen = '/home_container_screen';
 
   static const String homeContainer1Page = '/home_container1_page';
-
+  static const String productsScreen = '/products_screen';
   static const String initialRoute = '/initialRoute';
-
+  static const String chatScreen = '/chat_screen';
   static const String profileScreen = '/profile_screen';
+  static const String formschoolScreen = '/formschool_screen';
+  static const String schoolsInfoScreen = '/schools_info_screen';
 
+  static const String schoolsFacilitiesScreen = '/schools_facilities_screen';
+
+  static const String schoolsActivitiesScreen = '/schools_activities_screen';
+
+  static const String schoolsReviewsScreen = '/schools_reviews_screen';
 
   static List<GetPage> pages = [
     GetPage(
-      name:  TabContainerScreen,
-      page: () =>  TabTabContainerScreen(),
+      name: TabContainerScreen,
+      page: () => TabTabContainerScreen(),
       bindings: [
         SingleSuppliePolicyTabTabContainerBinding(),
+      ],
+    ),
+    GetPage(
+      name: cartScreen,
+      page: () => CartScreen(),
+      bindings: [
+        CartBinding(),
+      ],
+    ),
+    GetPage(
+      name: schoolsInfoScreen,
+      page: () => SchoolsInfoScreen(),
+      bindings: [
+        SchoolsInfoBinding(),
+      ],
+    ),
+    GetPage(
+      name: kindergartenScreen,
+      page: () => KindergartenScreen(),
+      bindings: [
+        KindergartenBinding(),
+      ],
+    ),
+    GetPage(
+      name: schoolsFacilitiesScreen,
+      page: () => SchoolsFacilitiesScreen(),
+      bindings: [
+        SchoolsFacilitiesBinding(),
+      ],
+    ),
+    GetPage(
+      name: schoolsActivitiesScreen,
+      page: () => SchoolsActivitiesScreen(),
+      bindings: [
+        SchoolsActivitiesBinding(),
+      ],
+    ),
+    GetPage(
+      name: schoolsReviewsScreen,
+      page: () => SchoolsReviewsScreen(),
+      bindings: [
+        SchoolsReviewsBinding(),
+      ],
+    ),
+    GetPage(
+      name: formschoolScreen,
+      page: () => FormschoolScreen(),
+      bindings: [
+        FormschoolBinding(),
       ],
     ),
     GetPage(
@@ -87,8 +172,13 @@ class AppRoutes {
         ChooselanguageBinding(),
       ],
     ),
-
-
+    GetPage(
+      name: chatScreen,
+      page: () => ChatScreen(),
+      bindings: [
+        ChatBinding(),
+      ],
+    ),
     GetPage(
       name: homeContainerScreen,
       page: () => HomeContainerScreen(),
@@ -101,6 +191,34 @@ class AppRoutes {
       page: () => SplashscreenScreen(),
       bindings: [
         SplashscreenBinding(),
+      ],
+    ),
+    GetPage(
+      name: teachersScreen,
+      page: () => TeachersScreen(),
+      bindings: [
+        TeachersBinding(),
+      ],
+    ),
+    GetPage(
+      name: schoolScreen,
+      page: () => SchoolScreen(),
+      bindings: [
+        SchoolBinding(),
+      ],
+    ),
+    GetPage(
+      name: productsScreen,
+      page: () => ProductsScreen(),
+      bindings: [
+        ProductsBinding(),
+      ],
+    ),
+    GetPage(
+      name: universitiesScreen,
+      page: () => UniversitiesScreen(),
+      bindings: [
+        UniversitiesBinding(),
       ],
     ),
     GetPage(
@@ -166,9 +284,6 @@ class AppRoutes {
         AppNavigationBinding(),
       ],
     ),
-
-
-
     GetPage(
       name: initialRoute,
       page: () => ChooselanguageScreen(),

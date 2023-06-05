@@ -1,5 +1,6 @@
 import 'package:eduz/core/app_export.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({this.onChanged});
@@ -8,24 +9,24 @@ class CustomBottomBar extends StatelessWidget {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: ImageConstant.imgFrame10419,
+      icon: ImageConstant.homeN,
       type: BottomBarEnum.Home,
-      activeIcon:ImageConstant.homeSelect,
+      activeIcon: ImageConstant.homeSelect,
     ),
     BottomMenuModel(
       icon: ImageConstant.active_cala,
       type: BottomBarEnum.Calander,
-      activeIcon:ImageConstant.calander_select,
+      activeIcon: ImageConstant.calander_select,
     ),
     BottomMenuModel(
-      icon: ImageConstant.starNew,
+      icon: ImageConstant.favouritN,
       type: BottomBarEnum.favourit,
-      activeIcon:ImageConstant.StartSelect,
+      activeIcon: ImageConstant.StartSelect,
     ),
     BottomMenuModel(
-      icon: ImageConstant.activeUser,
+      icon: ImageConstant.profileN,
       type: BottomBarEnum.profile,
-      activeIcon:ImageConstant.userSelect,
+      activeIcon: ImageConstant.userSelect,
     )
   ];
 
@@ -35,7 +36,7 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorConstant.whiteA700,
+        color: ColorConstant.yellow700,
         boxShadow: [
           BoxShadow(
             color: ColorConstant.black9003f,
@@ -62,12 +63,12 @@ class CustomBottomBar extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           items: List.generate(bottomMenuList.length, (index) {
             BottomMenuModel bottomMenu = bottomMenuList[index];
-          //  bottomMenu.icon
+            //  bottomMenu.icon
             return BottomNavigationBarItem(
               icon: CustomImageView(
                 svgPath: bottomMenu.icon,
                 height: getSize(
-                  44,
+                  50,
                 ),
                 width: getSize(
                   44,
@@ -115,7 +116,8 @@ enum BottomBarEnum {
 }
 
 class BottomMenuModel {
-  BottomMenuModel({required this.icon, required this.type , required this.activeIcon});
+  BottomMenuModel(
+      {required this.icon, required this.type, required this.activeIcon});
 
   String icon;
   String activeIcon;

@@ -12,6 +12,7 @@ class CustomSearchView extends StatelessWidget {
       this.margin,
       this.controller,
       this.focusNode,
+      this.autofocus = false,
       this.hintText,
       this.prefix,
       this.prefixConstraints,
@@ -35,6 +36,8 @@ class CustomSearchView extends StatelessWidget {
   TextEditingController? controller;
 
   FocusNode? focusNode;
+
+  bool? autofocus;
 
   String? hintText;
 
@@ -63,6 +66,7 @@ class CustomSearchView extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
+        autofocus: autofocus!,
         style: _setFontStyle(),
         decoration: _buildDecoration(),
       ),
@@ -90,9 +94,18 @@ class CustomSearchView extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
+      case SearchViewFontStyle.PoppinsRegular12:
+        return TextStyle(
+          color: ColorConstant.blueGray30001,
+          fontSize: getFontSize(
+            12,
+          ),
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400,
+        );
       default:
         return TextStyle(
-          color: ColorConstant.gray400,
+          color: ColorConstant.gray40002,
           fontSize: getFontSize(
             16,
           ),
@@ -104,6 +117,12 @@ class CustomSearchView extends StatelessWidget {
 
   _setOutlineBorderRadius() {
     switch (shape) {
+      case SearchViewShape.RoundedBorder8:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            8.00,
+          ),
+        );
       default:
         return BorderRadius.circular(
           getHorizontalSize(
@@ -115,6 +134,19 @@ class CustomSearchView extends StatelessWidget {
 
   _setBorderStyle() {
     switch (variant) {
+      case SearchViewVariant.FillGray10005:
+        return OutlineInputBorder(
+          borderRadius: _setOutlineBorderRadius(),
+          borderSide: BorderSide.none,
+        );
+      case SearchViewVariant.OutlineGray10002:
+        return OutlineInputBorder(
+          borderRadius: _setOutlineBorderRadius(),
+          borderSide: BorderSide(
+            color: ColorConstant.gray10002,
+            width: 1,
+          ),
+        );
       case SearchViewVariant.None:
         return InputBorder.none;
       default:
@@ -127,8 +159,12 @@ class CustomSearchView extends StatelessWidget {
 
   _setFillColor() {
     switch (variant) {
+      case SearchViewVariant.FillGray10005:
+        return ColorConstant.gray10005;
+      case SearchViewVariant.OutlineGray10002:
+        return ColorConstant.gray10002;
       default:
-        return ColorConstant.gray100;
+        return ColorConstant.gray10004;
     }
   }
 
@@ -155,6 +191,7 @@ class CustomSearchView extends StatelessWidget {
 
 enum SearchViewShape {
   RoundedBorder5,
+  RoundedBorder8,
 }
 
 enum SearchViewPadding {
@@ -162,10 +199,13 @@ enum SearchViewPadding {
 }
 
 enum SearchViewVariant {
+  FillGray10005,
   None,
-  FillGray100,
+  FillGray10004,
+  OutlineGray10002,
 }
 
 enum SearchViewFontStyle {
-  TajawalRegular16Gray400,
+  TajawalRegular16,
+  PoppinsRegular12,
 }

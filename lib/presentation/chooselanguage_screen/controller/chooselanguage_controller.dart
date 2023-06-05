@@ -6,25 +6,24 @@ import 'package:flutter/material.dart';
 class ChooselanguageController extends GetxController {
   Rx<ChooselanguageModel> chooselanguageModelObj = ChooselanguageModel().obs;
 
-
-
   void setLocale(String languageCode) {
     Get.updateLocale(Locale(languageCode));
   }
 
-  void selectArabic(){
+  void selectArabic() {
     setLocale('ar');
     chooselanguageModelObj.update((model) {
       model!.isEnglishSelected = false;
     });
   }
 
-  void selectEnglish(){
+  void selectEnglish() {
     setLocale('en');
     chooselanguageModelObj.update((model) {
       model!.isEnglishSelected = true;
     });
   }
+
   @override
   void onReady() {
     super.onReady();
@@ -33,6 +32,5 @@ class ChooselanguageController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-
   }
 }

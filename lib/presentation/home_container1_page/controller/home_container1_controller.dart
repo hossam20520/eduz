@@ -8,7 +8,25 @@ class HomeContainer1Controller extends GetxController {
   TextEditingController searchController = TextEditingController();
 
   Rx<HomeContainer1Model> homeContainer1ModelObj;
-
+  GoToView(route) {
+    if (route == "schools") {
+      Get.toNamed(
+        AppRoutes.schoolScreen,
+      );
+    } else if (route == "teachers") {
+      Get.toNamed(
+        AppRoutes.teachersScreen,
+      );
+    } else if (route == "university") {
+      Get.toNamed(
+        AppRoutes.universitiesScreen,
+      );
+    } else if (route == "KINDERGARTEN") {
+      Get.toNamed(
+        AppRoutes.kindergartenScreen,
+      );
+    }
+  }
 
   @override
   void onReady() {

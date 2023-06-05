@@ -7,14 +7,13 @@ class SplashscreenScreen extends GetWidget<SplashscreenController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: ColorConstant.yellow700,
+            backgroundColor: ColorConstant.whiteA700,
             body: Container(
                 height: size.height,
                 width: double.maxFinite,
                 padding: getPadding(top: 334),
                 child: Stack(alignment: Alignment.topCenter, children: [
                   CustomImageView(
-
                       imagePath: ImageConstant.imgImage1,
                       height: getVerticalSize(143),
                       width: getHorizontalSize(180),
@@ -24,10 +23,6 @@ class SplashscreenScreen extends GetWidget<SplashscreenController> {
                       height: getVerticalSize(143),
                       width: getHorizontalSize(180),
                       alignment: Alignment.topCenter)
-                ]
-                )
-            )
-        )
-    );
+                ]))));
   }
 }

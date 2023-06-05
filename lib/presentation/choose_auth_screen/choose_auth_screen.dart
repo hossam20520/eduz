@@ -37,82 +37,76 @@ class ChooseAuthScreen extends GetWidget<ChooseAuthController> {
                 padding: getPadding(
                   top: 139,
                 ),
-
               ),
-
-                  InkWell( onTap: controller.GotoLogin ,child:Container(
-                margin: getMargin(
-                  left: 1,
-                  top: 26,
-                ),
-                padding: getPadding(
-                  left: 40,
-                  top: 13,
-                  right: 40,
-                  bottom: 13,
-                ),
-                decoration: AppDecoration.fillPurpleA400.copyWith(
-                  borderRadius: BorderRadiusStyle.roundedBorder11,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: getPadding(
-                        left: 10,
-                        top: 3,
-                      ),
-                      child: Text(
-                        "lbl_login2".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtMontserratRegular20,
-                      ),
+              InkWell(
+                  onTap: controller.GotoLogin,
+                  child: Container(
+                    margin: getMargin(
+                      left: 1,
+                      top: 26,
                     ),
-
-                  ],
-                ),
-              )) ,
-
-          InkWell( onTap: controller.GoToRegister ,child:Container(
-                margin: getMargin(
-                  left: 1,
-                  top: 26,
-                ),
-                padding: getPadding(
-                  left: 40,
-                  top: 13,
-                  right: 40,
-                  bottom: 13,
-                ),
-                decoration: AppDecoration.fillPurpleA400.copyWith(
-                  borderRadius: BorderRadiusStyle.roundedBorder11,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: getPadding(
-                        left: 10,
-                        top: 3,
-                      ),
-                      child: Text(
-                        "lbl_register2".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtMontserratRegular20,
-                      ),
+                    padding: getPadding(
+                      left: 40,
+                      top: 13,
+                      right: 40,
+                      bottom: 13,
                     ),
-
-                  ],
+                    decoration: AppDecoration.fillPurpleA400.copyWith(
+                      borderRadius: BorderRadiusStyle.roundedBorder11,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: getPadding(
+                            left: 10,
+                            top: 3,
+                          ),
+                          child: Text(
+                            "lbl_login2".tr,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: AppStyle.txtMontserratRegular20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+              InkWell(
+                onTap: controller.GoToRegister,
+                child: Container(
+                  margin: getMargin(
+                    left: 1,
+                    top: 26,
+                  ),
+                  padding: getPadding(
+                    left: 40,
+                    top: 13,
+                    right: 40,
+                    bottom: 13,
+                  ),
+                  decoration: AppDecoration.fillPurpleA400.copyWith(
+                    borderRadius: BorderRadiusStyle.roundedBorder11,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: getPadding(
+                          left: 10,
+                          top: 3,
+                        ),
+                        child: Text(
+                          "lbl_register2".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtMontserratRegular20,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-          ),
-
-
-
-
-
               Padding(
                 padding: getPadding(
                   left: 16,

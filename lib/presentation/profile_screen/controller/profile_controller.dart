@@ -14,8 +14,6 @@ class ProfileController extends GetxController {
 
   Rx<bool> isShowPassword = true.obs;
 
-
-
   ProfileController(this.profileModelObj);
 
   @override

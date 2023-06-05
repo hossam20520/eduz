@@ -40,10 +40,8 @@ final Map<String, String> arSa = {
   "msg_log_in_to_your_account": "قم بتسجيل الدخول",
   "lbl_profile": "Profile",
   "lbl_skip": "تخطي",
-  "lbl_register2":"انشاء حساب جديد",
-
-  "msg_select_your_account":"اختر نوع الحساب",
-
+  "lbl_register2": "انشاء حساب جديد",
+  "msg_select_your_account": "اختر نوع الحساب",
   "lbl": "رحمة علي",
   "lbl_register": "Register",
   "msg_don_t_have_an_account2": "ليس لديك حساب ؟  ",
@@ -54,8 +52,7 @@ final Map<String, String> arSa = {
   "lbl_categories2": "Categories",
   "lbl_email": "البريد الالكتروني",
   "lbl_arabic": "العربية",
-  "msg_you_can_change_language":
-      "يمكنك تغيير اللغة من الاعدادات في اي وقت",
+  "msg_you_can_change_language": "يمكنك تغيير اللغة من الاعدادات في اي وقت",
   "lbl_log_in2": "Log in",
   "lbl_bookings": "Bookings",
   "lbl_search": "Search.....",

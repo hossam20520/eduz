@@ -67,49 +67,150 @@ class CustomIconButton extends StatelessWidget {
   _buildDecoration() {
     return BoxDecoration(
       color: _setColor(),
+      border: _setBorder(),
       borderRadius: _setBorderRadius(),
+      boxShadow: _setBoxShadow(),
     );
   }
 
   _setPadding() {
     switch (padding) {
+      case IconButtonPadding.PaddingAll18:
+        return getPadding(
+          all: 18,
+        );
+      case IconButtonPadding.PaddingAll9:
+        return getPadding(
+          all: 9,
+        );
+      case IconButtonPadding.PaddingAll11:
+        return getPadding(
+          all: 11,
+        );
+      case IconButtonPadding.PaddingAll1:
+        return getPadding(
+          all: 1,
+        );
       default:
         return getPadding(
-          all: 10,
+          all: 4,
         );
     }
   }
 
   _setColor() {
     switch (variant) {
-      case IconButtonVariant.FillYellow700:
-        return ColorConstant.yellow700;
+      case IconButtonVariant.FillPurpleA400:
+        return ColorConstant.purpleA400;
+      case IconButtonVariant.OutlineBlack90019:
+        return ColorConstant.purpleA400;
+      case IconButtonVariant.FillWhiteA700:
+        return ColorConstant.whiteA700;
+      case IconButtonVariant.FillGray10005:
+        return ColorConstant.gray10005;
       default:
-        return ColorConstant.gray40001;
+        return ColorConstant.whiteA700;
+    }
+  }
+
+  _setBorder() {
+    switch (variant) {
+      case IconButtonVariant.FillPurpleA400:
+      case IconButtonVariant.OutlineBlack90019:
+      case IconButtonVariant.FillWhiteA700:
+      case IconButtonVariant.FillGray10005:
+        return null;
+      default:
+        return Border.all(
+          color: ColorConstant.gray40001,
+          width: getHorizontalSize(
+            1.00,
+          ),
+        );
     }
   }
 
   _setBorderRadius() {
     switch (shape) {
+      case IconButtonShape.RoundedBorder4:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            4.00,
+          ),
+        );
+
+      case IconButtonShape.RoundedBorder16:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            16.00,
+          ),
+        );
+      case IconButtonShape.CircleBorder28:
+        return BorderRadius.circular(
+          getHorizontalSize(
+            28.00,
+          ),
+        );
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            22.00,
+            13.00,
           ),
         );
     }
   }
-}
 
-enum IconButtonShape {
-  CircleBorder22,
+  _setBoxShadow() {
+    switch (variant) {
+      case IconButtonVariant.OutlineBlack90019:
+        return [
+          BoxShadow(
+            color: ColorConstant.black90019,
+            spreadRadius: getHorizontalSize(
+              2.00,
+            ),
+            blurRadius: getHorizontalSize(
+              2.00,
+            ),
+            offset: Offset(
+              0,
+              3.45,
+            ),
+          ),
+        ];
+      case IconButtonVariant.OutlineGray40001:
+      case IconButtonVariant.FillPurpleA400:
+      case IconButtonVariant.FillWhiteA700:
+      case IconButtonVariant.FillGray10005:
+        return null;
+      default:
+        return null;
+    }
+  }
 }
 
 enum IconButtonPadding {
-  PaddingAll10,
+  PaddingAll11,
+  PaddingAll9,
+  PaddingAll4,
+  PaddingAll18,
+  PaddingAll1,
 }
 
 enum IconButtonVariant {
-  FillGray40001,
   FillYellow700,
+  OutlineGray40001,
+  FillPurpleA400,
+  OutlineBlack90019,
+  FillWhiteA700,
+  FillGray10005,
+  OutlineGray40002,
+  FillGray10006,
+}
+
+enum IconButtonShape {
+  RoundedBorder13,
+  RoundedBorder16,
+  RoundedBorder4,
+  CircleBorder28,
 }

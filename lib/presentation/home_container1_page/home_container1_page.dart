@@ -27,109 +27,180 @@ class HomeContainer1Page extends StatelessWidget {
             backgroundColor: ColorConstant.whiteA700,
             drawer: DrawerDraweritem(DrawerController()),
             appBar: CustomAppBar(
-                height: getVerticalSize(70),
-                leadingWidth: 53,
+                background: Colors.transparent,
+                height: getVerticalSize(100),
+                leadingWidth: 42,
                 leading: AppbarImage(
-                    height: getVerticalSize(34),
+                    height: getVerticalSize(22),
                     width: getHorizontalSize(37),
-                    svgPath: ImageConstant.imgMenuPurpleA400,
-                    margin: getMargin(left: 16, top: 11, bottom: 11),
+                    svgPath: ImageConstant.imgMenuYellow7001,
+                    margin: getMargin(left: 5, bottom: 37),
                     onTap: () {
                       onTapMenu();
                     }),
-                title: CustomSearchView(
-                    width: getHorizontalSize(227),
-                    focusNode: FocusNode(),
-                    controller: controller.searchController,
-                    hintText: "lbl_search".tr,
-                    margin: getMargin(left: 5),
-                    prefix: Container(
-                        margin:
-                            getMargin(left: 12, top: 5, right: 14, bottom: 8),
-                        child:
-                            CustomImageView(svgPath: ImageConstant.imgSearch)),
-                    prefixConstraints:
-                        BoxConstraints(maxHeight: getVerticalSize(38)),
-                    suffix: Padding(
-                        padding: EdgeInsets.only(right: getHorizontalSize(15)),
-                        child: IconButton(
-                            onPressed: () {
-                              controller.searchController.clear();
-                            },
-                            icon: Icon(Icons.clear,
-                                color: Colors.grey.shade600)))),
+                title: Padding(
+                    padding: getPadding(left: 230),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                  padding: getPadding(right: 8),
+                                  child: RichText(
+                                      text: TextSpan(children: []),
+                                      textAlign: TextAlign.left))),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("blb_hello2".tr,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: AppStyle.txtInterBold14Balc)),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("lbl_amira".tr,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: AppStyle.txtInterBold14))
+                        ])),
                 actions: [
                   AppbarImage(
-                      height: getVerticalSize(36),
-                      width: getHorizontalSize(83),
-                      svgPath: ImageConstant.imgVideocamera,
-                      margin:
-                          getMargin(left: 5, top: 10, right: 16, bottom: 10))
+                      height: getVerticalSize(51),
+                      width: getHorizontalSize(50),
+                      imagePath: ImageConstant.imgIstockphoto114,
+                      margin: getMargin(left: 11, top: 8, right: 16))
                 ]),
-            body: Container(
-                width: double.maxFinite,
-                padding: getPadding(left: 16, right: 16),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgMaskgroup,
-                          height: getVerticalSize(126),
-                          width: getHorizontalSize(358),
-                          margin: getMargin(top: 3)),
-                      Padding(
-                          padding: getPadding(top: 39),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("lbl_categories2".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: AppStyle.txtMontserratSemiBold20),
-                                Spacer(),
-                                Padding(
-                                    padding: getPadding(top: 2, bottom: 3),
-                                    child: Text("lbl_see_all".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style:
-                                            AppStyle.txtMontserratRegular16)),
-                                CustomImageView(
-                                    svgPath: ImageConstant.imgArrowright,
-                                    height: getSize(24),
-                                    width: getSize(24),
-                                    margin: getMargin(left: 4, bottom: 1))
-                              ])),
-                      Expanded(
-                          child: Padding(
-                              padding: getPadding(left: 25, top: 26, right: 22),
-                              child: Obx(() => GridView.builder(
-                                  shrinkWrap: true,
-                                  gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                          mainAxisExtent: getVerticalSize(177),
-                                          crossAxisCount: 2,
-                                          mainAxisSpacing:
-                                              getHorizontalSize(22),
-                                          crossAxisSpacing:
-                                              getHorizontalSize(22)),
-                                  physics:  BouncingScrollPhysics(),
-
-                                  itemCount: controller.homeContainer1ModelObj
-                                      .value.homeContainerItemList.value.length,
-                                  itemBuilder: (context, index) {
-                                    HomeContainerItemModel model = controller
+            body: Stack(children: [
+              Container(
+                  width: double.maxFinite,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                                padding:
+                                    getPadding(left: 51, top: 7, right: 13),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      CustomSearchView(
+                                          width: getHorizontalSize(224),
+                                          focusNode: FocusNode(),
+                                          autofocus: false,
+                                          controller:
+                                              controller.searchController,
+                                          hintText: "lbl_search".tr,
+                                          variant: SearchViewVariant
+                                              .OutlineGray10002,
+                                          shape: SearchViewShape.RoundedBorder8,
+                                          fontStyle: SearchViewFontStyle
+                                              .PoppinsRegular12,
+                                          prefix: Container(
+                                              margin: getMargin(
+                                                  left: 16,
+                                                  top: 10,
+                                                  right: 8,
+                                                  bottom: 11),
+                                              child: CustomImageView(
+                                                  svgPath: ImageConstant
+                                                      .imgSearchGray80003)),
+                                          prefixConstraints: BoxConstraints(
+                                              maxHeight: getVerticalSize(37)),
+                                          suffix: Padding(
+                                              padding: EdgeInsets.only(
+                                                  right: getHorizontalSize(15)),
+                                              child: IconButton(
+                                                  onPressed: () {
+                                                    controller.searchController
+                                                        .clear();
+                                                  },
+                                                  icon: Icon(Icons.clear,
+                                                      color: Colors
+                                                          .grey.shade600)))),
+                                      CustomImageView(
+                                          svgPath: ImageConstant.imgGoogle,
+                                          height: getVerticalSize(31),
+                                          width: getHorizontalSize(33),
+                                          margin: getMargin(
+                                              left: 16, top: 3, bottom: 2)),
+                                      CustomImageView(
+                                          svgPath: ImageConstant.imgCamera,
+                                          height: getVerticalSize(31),
+                                          width: getHorizontalSize(33),
+                                          margin: getMargin(
+                                              left: 20, top: 1, bottom: 4))
+                                    ]))),
+                        CustomImageView(
+                            imagePath: ImageConstant.imgImage11,
+                            height: getVerticalSize(135),
+                            width: getHorizontalSize(390),
+                            margin: getMargin(top: 20)),
+                        Padding(
+                            padding: getPadding(left: 16, top: 14, right: 16),
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("lbl_categories".tr,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style: AppStyle
+                                          .txtMontserratSemiBold20Yellow700),
+                                  Spacer(),
+                                  Padding(
+                                      padding: getPadding(top: 2, bottom: 3),
+                                      child: Text("lbl_see_all".tr,
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style:
+                                              AppStyle.txtMontserratRegular16)),
+                                  CustomImageView(
+                                      svgPath:
+                                          ImageConstant.imgArrowrightYellow700,
+                                      height: getSize(24),
+                                      width: getSize(24),
+                                      margin: getMargin(left: 4, bottom: 1))
+                                ])),
+                        Expanded(
+                            child: Padding(
+                                padding:
+                                    getPadding(left: 41, top: 40, right: 38),
+                                child: Obx(() => GridView.builder(
+                                    shrinkWrap: true,
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                            mainAxisExtent:
+                                                getVerticalSize(177),
+                                            crossAxisCount: 2,
+                                            mainAxisSpacing:
+                                                getHorizontalSize(22),
+                                            crossAxisSpacing:
+                                                getHorizontalSize(22)),
+                                    physics: BouncingScrollPhysics(),
+                                    itemCount: controller
                                         .homeContainer1ModelObj
                                         .value
                                         .homeContainerItemList
-                                        .value[index];
-                                    return HomeContainerItemWidget(model);
-                                  }))))
-                    ]))));
+                                        .value
+                                        .length,
+                                    itemBuilder: (context, index) {
+                                      HomeContainerItemModel model = controller
+                                          .homeContainer1ModelObj
+                                          .value
+                                          .homeContainerItemList
+                                          .value[index];
+                                      return HomeContainerItemWidget(model);
+                                    })))),
+                      ])),
+            ])));
   }
 
   onTapMenu() {
     _scaffoldKey.currentState?.openDrawer();
+  }
+
+  GoToChat() {
+    Get.toNamed(AppRoutes.chatScreen);
   }
 }

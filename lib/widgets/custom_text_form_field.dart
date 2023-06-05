@@ -10,9 +10,9 @@ class CustomTextFormField extends StatelessWidget {
       this.alignment,
       this.width,
       this.margin,
-      this.autofocus = false,
       this.controller,
       this.focusNode,
+      this.autofocus = false,
       this.isObscureText = false,
       this.textInputAction = TextInputAction.next,
       this.textInputType = TextInputType.text,
@@ -35,12 +35,14 @@ class CustomTextFormField extends StatelessWidget {
   Alignment? alignment;
 
   double? width;
-  bool? autofocus;
+
   EdgeInsetsGeometry? margin;
 
   TextEditingController? controller;
 
   FocusNode? focusNode;
+
+  bool? autofocus;
 
   bool? isObscureText;
 
@@ -112,6 +114,24 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFontStyle() {
     switch (fontStyle) {
+      case TextFormFieldFontStyle.InterRegular15:
+        return TextStyle(
+          color: ColorConstant.blueGray400,
+          fontSize: getFontSize(
+            15,
+          ),
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w400,
+        );
+      case TextFormFieldFontStyle.InterRegular8:
+        return TextStyle(
+          color: ColorConstant.gray800,
+          fontSize: getFontSize(
+            8,
+          ),
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w400,
+        );
       case TextFormFieldFontStyle.MontserratRegular18:
         return TextStyle(
           color: ColorConstant.indigo300,
@@ -135,10 +155,33 @@ class CustomTextFormField extends StatelessWidget {
 
   _setOutlineBorderRadius() {
     switch (shape) {
-      default:
+      case TextFormFieldShape.RoundedBorder4:
         return BorderRadius.circular(
           getHorizontalSize(
-            11.00,
+            4.00,
+          ),
+        );
+      default:
+        return BorderRadius.only(
+          topLeft: Radius.circular(
+            getHorizontalSize(
+              13.00,
+            ),
+          ),
+          topRight: Radius.circular(
+            getHorizontalSize(
+              12.00,
+            ),
+          ),
+          bottomLeft: Radius.circular(
+            getHorizontalSize(
+              12.00,
+            ),
+          ),
+          bottomRight: Radius.circular(
+            getHorizontalSize(
+              13.00,
+            ),
           ),
         );
     }
@@ -146,6 +189,16 @@ class CustomTextFormField extends StatelessWidget {
 
   _setBorderStyle() {
     switch (variant) {
+      case TextFormFieldVariant.FillWhiteA700:
+        return OutlineInputBorder(
+          borderRadius: _setOutlineBorderRadius(),
+          borderSide: BorderSide.none,
+        );
+      case TextFormFieldVariant.FillYellow700:
+        return OutlineInputBorder(
+          borderRadius: _setOutlineBorderRadius(),
+          borderSide: BorderSide.none,
+        );
       case TextFormFieldVariant.OutlineIndigo300:
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
@@ -169,6 +222,10 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFillColor() {
     switch (variant) {
+      case TextFormFieldVariant.FillWhiteA700:
+        return ColorConstant.whiteA700;
+      case TextFormFieldVariant.FillYellow700:
+        return ColorConstant.yellow700;
       case TextFormFieldVariant.OutlineIndigo300:
         return ColorConstant.whiteA700;
       default:
@@ -180,6 +237,10 @@ class CustomTextFormField extends StatelessWidget {
     switch (variant) {
       case TextFormFieldVariant.OutlineIndigo300_1:
         return false;
+      case TextFormFieldVariant.FillWhiteA700:
+        return true;
+      case TextFormFieldVariant.FillYellow700:
+        return true;
       case TextFormFieldVariant.OutlineIndigo300:
         return true;
       case TextFormFieldVariant.None:
@@ -196,6 +257,20 @@ class CustomTextFormField extends StatelessWidget {
           top: 16,
           bottom: 16,
         );
+      case TextFormFieldPadding.PaddingAll12:
+        return getPadding(
+          all: 12,
+        );
+      case TextFormFieldPadding.PaddingAll8:
+        return getPadding(
+          all: 8,
+        );
+      case TextFormFieldPadding.PaddingT3:
+        return getPadding(
+          top: 3,
+          right: 3,
+          bottom: 3,
+        );
       default:
         return getPadding(
           top: 16,
@@ -207,21 +282,29 @@ class CustomTextFormField extends StatelessWidget {
 }
 
 enum TextFormFieldShape {
-  RoundedBorder11,
+  CustomBorderTL13,
+  RoundedBorder4,
 }
 
 enum TextFormFieldPadding {
   PaddingT16,
   PaddingT16_1,
+  PaddingAll12,
+  PaddingAll8,
+  PaddingT3,
 }
 
 enum TextFormFieldVariant {
   None,
   OutlineIndigo300_1,
+  FillWhiteA700,
+  FillYellow700,
   OutlineIndigo300,
 }
 
 enum TextFormFieldFontStyle {
   MontserratLight18,
+  InterRegular15,
+  InterRegular8,
   MontserratRegular18,
 }

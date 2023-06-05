@@ -1,3 +1,4 @@
+import 'package:eduz/sideMenu/entry_point.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -4,16 +4,13 @@ import 'package:eduz/presentation/account_type_screen/models/account_type_model.
 class AccountTypeController extends GetxController {
   Rx<AccountTypeModel> accountTypeModelObj = AccountTypeModel().obs;
 
-
-  void selectParent(){
-
+  void selectParent() {
     accountTypeModelObj.update((model) {
       model!.parent = true;
     });
   }
 
-  void selectTeacher(){
-
+  void selectTeacher() {
     accountTypeModelObj.update((model) {
       model!.parent = false;
     });

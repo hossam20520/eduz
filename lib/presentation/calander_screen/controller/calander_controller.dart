@@ -5,15 +5,9 @@ import 'package:eduz/widgets/custom_bottom_bar.dart';
 class CalanderController extends GetxController {
   Rx<CalanderModel> calanderModelObj = CalanderModel().obs;
 
-
-
-
   CalanderController(this.CalanderModelObj);
 
-
-
   Rx<CalanderModel> CalanderModelObj;
-
 
   @override
   void onReady() {

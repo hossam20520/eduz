@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       {required this.height,
       this.leadingWidth,
       this.leading,
+      this.background,
       this.title,
       this.centerTitle,
       this.actions});
@@ -16,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   double? leadingWidth;
 
   Widget? leading;
-
+  Color? background = Colors.transparent;
   Widget? title;
 
   bool? centerTitle;
@@ -29,7 +30,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       toolbarHeight: height,
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: background,
       leadingWidth: leadingWidth ?? 0,
       leading: leading,
       title: title,
@@ -44,4 +45,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         size.width,
         height,
       );
+}
+
+enum Style {
+  bgFillYellow700,
 }

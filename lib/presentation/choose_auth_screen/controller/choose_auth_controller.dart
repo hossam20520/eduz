@@ -9,25 +9,16 @@ class ChooseAuthController extends GetxController {
 
   Rx<ChooseAuthModel> chooseAuthModelObj = ChooseAuthModel().obs;
 
-
-
-
   void GotoLogin() {
     Get.toNamed(
       AppRoutes.loginScreen,
     );
   }
 
-
-
-  void GoToRegister(){
+  void GoToRegister() {
     Get.toNamed(
       AppRoutes.createAccountScreen,
     );
-
-
-
-
   }
 
   @override
